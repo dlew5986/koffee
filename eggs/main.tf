@@ -21,3 +21,20 @@ module "tags" {
     tf_root_module = "eggs"
   }
 }
+
+resource "aws_iam_user" "automation" {
+  name = "koffee-automation"
+}
+
+module "egg_tf_state" {
+  source         = "../modules/egg_tf_state"
+  namespace      = "koffee"
+  principal_arns = [aws_iam_user.automation.arn]
+}
+
+module "egg_tf_user_permissions" {
+  source            = "../modules/egg_tf_user_permissions"
+  namespace         = "koffee"
+  tf_state_role_arn = module.egg_tf_state.config.role_arn
+  user_names        = [aws_iam_user.automation.name]
+}
