@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "role_permissions" {
 }
 
 resource "aws_iam_policy" "role_permissions" {
-  name   = "${var.namespace}-tf-state"
+  name   = "${var.namespace}-tf-state-readwrite"
   path   = "/"
   policy = data.aws_iam_policy_document.role_permissions.json
 }

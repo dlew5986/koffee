@@ -9,7 +9,7 @@ data "aws_iam_policy_document" "role_trust_relationship" {
 }
 
 resource "aws_iam_role" "tf_state" {
-  name                 = "${var.namespace}-tf-state"
+  name                 = "${var.namespace}-tf-state-readwrite"
   path                 = "/"
   assume_role_policy   = data.aws_iam_policy_document.role_trust_relationship.json
   max_session_duration = 43200
