@@ -26,16 +26,20 @@ resource "aws_iam_user" "automation" {
   name = "koffee-automation"
 }
 
+data "aws_iam_role" "blueAdmin" {
+  name = "blueAdmin"
+}
+
 module "egg_tf_state" {
   source         = "../modules/egg_tf_state"
   namespace      = "koffee"
-  principal_arns = [aws_iam_user.automation.arn]
+  principal_arns = [aws_iam_user.automation.arn,data.aws_iam_role.blueAdmin.arn]
 }
 
 module "egg_tf_provisioner" {
   source         = "../modules/egg_tf_provisioner"
   namespace      = "koffee"
-  principal_arns = [aws_iam_user.automation.arn]
+  principal_arns = [aws_iam_user.automation.arn,data.aws_iam_role.blueAdmin.arn]
 }
 
 module "egg_tf_user_permissions" {
