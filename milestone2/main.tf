@@ -8,8 +8,6 @@ provider "aws" {
 }
 
 module "tags" {
-  source = "./modules/tags"
-  additional_tags = {
-    github_repo = local.namespace
-  }
+  source  = "./modules/tags"
+  project = local.namespace
 }

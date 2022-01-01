@@ -1,6 +1,5 @@
 variable "project" {
   type    = string
-  default = "koffee"
 }
 
 variable "created_using" {
