@@ -1,3 +1,4 @@
+/*
 output "vpc" {
   value = aws_vpc.vpc
 }
@@ -9,3 +10,4 @@ output "rt" {
 output "igw" {
   value = aws_internet_gateway.igw
 }
+*/
