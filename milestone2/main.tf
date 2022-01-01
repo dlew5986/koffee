@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = local.aws_region
 
   default_tags {
     tags = module.tags.all_the_tags
@@ -8,8 +8,8 @@ provider "aws" {
 }
 
 module "tags" {
-  source = "../modules/tags"
+  source = "./modules/tags"
   additional_tags = {
-    github_repo = "koffee"
+    github_repo = local.namespace
   }
 }
