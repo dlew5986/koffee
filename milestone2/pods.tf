@@ -8,6 +8,7 @@ module "pod_a" {
   vpc_id                 = aws_vpc.vpc.id
 }
 
+/*
 module "pod_b" {
   source                 = "./modules/pod"
   availability_zone_name = data.aws_availability_zone.b.name
@@ -17,7 +18,9 @@ module "pod_b" {
   namespace              = local.namespace
   vpc_id                 = aws_vpc.vpc.id
 }
+*/
 
+/*
 module "pod_c" {
   source                 = "./modules/pod"
   availability_zone_name = data.aws_availability_zone.c.name
@@ -27,3 +30,4 @@ module "pod_c" {
   namespace              = local.namespace
   vpc_id                 = aws_vpc.vpc.id
 }
+*/
