@@ -10,4 +10,8 @@ output "rt" {
 output "igw" {
   value = aws_internet_gateway.igw
 }
+
+output "key_pair" {
+  value = aws_key_pair.key_pair
+}
 */
