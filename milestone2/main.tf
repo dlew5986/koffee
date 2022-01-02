@@ -11,3 +11,7 @@ module "tags" {
   source  = "./modules/tags"
   project = local.namespace
 }
+
+module "myip" {
+  source = "./modules/myip"
+}
