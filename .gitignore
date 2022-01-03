@@ -31,3 +31,6 @@ override.tf.json
 # ignore files related to key pairs
 *.pem
 *.openssh
+
+# macOS
+*DS_Store
