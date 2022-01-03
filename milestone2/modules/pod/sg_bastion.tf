@@ -4,7 +4,7 @@ resource "aws_security_group" "bastion" {
   tags   = { Name = local.sg_name_bastion }
 }
 
-resource "aws_security_group_rule" "inbound_to_ssh_from_internet" {
+resource "aws_security_group_rule" "bastion_inbound_to_ssh_from_internet" {
   type              = "ingress"
   description       = "inbound to ssh from the internet"
   from_port         = 22
@@ -14,7 +14,7 @@ resource "aws_security_group_rule" "inbound_to_ssh_from_internet" {
   security_group_id = aws_security_group.bastion.id
 }
 
-resource "aws_security_group_rule" "outbound_to_all" {
+resource "aws_security_group_rule" "bastion_outbound_to_all" {
   type              = "egress"
   description       = "outbound to all"
   from_port         = 0

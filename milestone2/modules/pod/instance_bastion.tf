@@ -6,9 +6,6 @@ resource "aws_instance" "bastion" {
   subnet_id                   = aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.bastion.id]
 
-  #iam_instance_profile        = ""
-  #user_data                   = ""
-
   root_block_device {
     delete_on_termination = true
     encrypted             = true
@@ -19,7 +16,7 @@ resource "aws_instance" "bastion" {
 
 }
 
-resource "aws_ec2_tag" "eni_tags" {
+resource "aws_ec2_tag" "eni_tags_bastion" {
   resource_id = aws_instance.bastion.primary_network_interface_id
   for_each    = { Name = local.instance_name_bastion }
   key         = each.key
