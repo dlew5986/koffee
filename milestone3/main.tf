@@ -12,5 +12,5 @@ module "network_3_tier" {
   namespace          = var.namespace
   availability_zones = var.availability_zones
   source_cidr_block  = module.myip.cidr
-  vpc_cidr_block     = var.vpc_cidr_block
+  vpc_cidr_block = var.vpc_cidr_block
 }
