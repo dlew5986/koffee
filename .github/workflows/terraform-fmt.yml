@@ -1,5 +1,5 @@
 name: terraform-fmt-name
-on: [workflow_call]
+on: [workflow_dispatch]
 jobs:
   terraform-fmt-job:
     runs-on: ubuntu-latest
