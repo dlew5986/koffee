@@ -1,0 +1,8 @@
+name: terraform-fmt-name
+on: [workflow_call]
+jobs:
+  terraform-fmt-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: terraform fmt -check -diff -recursive
